@@ -97,7 +97,7 @@ public class RNDataWedgeIntentsModule extends ReactContextBaseJavaModule impleme
     private void reactRegisterReceiver(BroadcastReceiver broadcastReceiver, IntentFilter intentFilter) {
         // Android 14 Support
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            this.reactContext.registerReceiver(broadcastReceiver, intentFilter, this.reactContext.RECEIVER_NOT_EXPORTED);
+            this.reactContext.registerReceiver(broadcastReceiver, intentFilter, this.reactContext.RECEIVER_EXPORTED);
         } else {
             this.reactContext.registerReceiver(broadcastReceiver, intentFilter);
         }
